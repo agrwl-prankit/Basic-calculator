@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Basic Calculator</title>
+
         <style type="text/css">
             .btn{ background-color: darkgreen;
                 padding-left: 20px;
@@ -14,19 +15,70 @@
                     padding: 5px;}
             .cen{align-items: center;}
         </style>
+
     </head>
+
     <body>
+
         <div id="divall">
-        <h1 style="text-align: center;">Calculator</h1>
-        <p>Type Value 1: <input ></p>
-        <p>Type Value 2: <input ></p>
-        <div class="cen">
-            <input class="btn" type="submit" value="+">
-            <input class="btn" type="submit" value="-">
-            <input class="btn" type="submit" value="x">
-            <input class="btn" type="submit" value="/">
+            <h1 style="text-align: center;">Calculator</h1>
+            <p>Type Value 1: <input id="n1" ></p>
+            <p>Type Value 2: <input id="n2" ></p>
+            <div class="cen">
+                <button class="btn" id="sum">+</button>
+                <button class="btn" id="sub">-</button>
+                <button class="btn" id="mul">x</button>
+                <button class="btn" id="div">/</button>
+            </div>
+            <p class="cen" id="res">Result:  </p>
         </div>
-        <p class="cen">Result: <input></p>
-    </div>
+
+        <script>
+
+            const sumBtn = document.querySelector('#sum');
+            sumBtn.addEventListener('click', () => {
+                var field1 = document.getElementById("n1").value;
+                var field2 = document.getElementById("n2").value;
+                var result = parseFloat(field1) + parseFloat(field2);
+                if(!isNaN(result)){
+                    document.getElementById("res").innerText="Result: "+result;
+               }
+            });
+
+            const subBtn = document.querySelector('#sub');
+            subBtn.addEventListener('click', () => {
+                var field1 = document.getElementById("n1").value;
+                var field2 = document.getElementById("n2").value;
+                var result = parseFloat(field1) - parseFloat(field2);
+                if(!isNaN(result)){
+                    console.log(result);
+                    document.getElementById("res").innerText="Result: "+result;
+                }
+            });
+
+            const mulBtn = document.querySelector('#mul');
+            mulBtn.addEventListener('click', () => {
+                var field1 = document.getElementById("n1").value;
+                var field2 = document.getElementById("n2").value;
+                var result = parseFloat(field1) * parseFloat(field2);
+                if(!isNaN(result)){
+                    console.log(result);
+                    document.getElementById("res").innerText="Result: "+result;
+                }
+            });
+
+            const divBtn = document.querySelector('#div');
+            divBtn.addEventListener('click', () => {
+                var field1 = document.getElementById("n1").value;
+                var field2 = document.getElementById("n2").value;
+                var result = parseFloat(field1) / parseFloat(field2);
+                if(!isNaN(result)){
+                    console.log(result);
+                    document.getElementById("res").innerText="Result: "+result;
+                }
+            });
+
+        </script>
+
     </body>
 </html>
